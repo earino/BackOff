@@ -1,0 +1,13 @@
+Package: BackOff
+Type: Package
+Title: Manages algorithmic backoff for polling and IPC
+Version: 1.0
+Date: 2014-09-05
+Author: Eduardo Ariño de la Rubia
+Maintainer: Eduardo Ariño de la Rubia <earino@gmail.com>
+Description: Whenever you find yourself in a polling loop, hitting a resource
+   over and over again (like a web service, or a database connection), often 
+   times there are more elegant ways to handle than simply a sleep (or even
+   worse, hammering the resource.) This package allows for a simple interface
+   to stateful backoff using linear, exponential, and random backoff.
+License: MIT + file LICENSE
