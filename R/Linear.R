@@ -11,7 +11,6 @@
 #' @param slope The slope of the line
 #' @param b The y intercept (or minimal backoff)
 #' @param max_timeout The maximum amount of time the system can backoff (in seconds)
-#' @keyword constructor
 #' @export
 #' @examples 
 #' backoff_obj <- Linear(slope = 5, b=2)
@@ -32,7 +31,6 @@ Linear <- function(slope=1, b=0, max_timeout=0) {
 }
 #' Returns the new back off value.
 #'
-#' @keyword back off time
 #' @export
 
 calculate_back_off.backoff.linear <- function(x) {

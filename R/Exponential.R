@@ -9,7 +9,6 @@
 #'      4th failure  :  4^2 = 16
 #' @param exponent The exponent of the equiation
 #' @param max_timeout The maximum amount of time the system can backoff (in seconds)
-#' @keyword constructor
 #' @export
 #' @examples 
 #' backoff_obj <- Exponential(exponent = 5)
@@ -30,7 +29,6 @@ Exponential <- function(exponent=1, max_timeout=0) {
 
 #' Returns the new back off value.
 #'
-#' @keyword back off time
 #' @export
 
 calculate_back_off.backoff.exponential <- function(x) {

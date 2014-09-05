@@ -2,7 +2,6 @@
 #' 
 #' Builds a generic BackOff object (can't be used directly.)
 #' @param max_timeout The maximum amount of time the system can backoff (in seconds)
-#' @keyword constructor
 #' @export
 #' @examples 
 #' backoff_obj <- BackOff(max_timeout = 5)
@@ -35,8 +34,6 @@ back_off_in_progress <- function(x) UseMethod("back_off_in_progress")
 #'    > 0, number of seconds until the delay is over
 #'    0 delay is up.  Meaning that you should do your next attempt.
 #'    
-#' @param
-#' @keywords delay
 #' @export
 #' @examples
 #' delay(backoff_obj) #5
@@ -63,8 +60,6 @@ delay.backoff.base <- function(x) {
 #' Sleep the system
 #' 
 #' This is a shortcut for Sys.sleep(delay(backoff_obj))
-#' @param
-#' @keywords sleep
 #' @export
 #' @examples
 #' sleep(backoff_obj)
@@ -78,8 +73,6 @@ sleep.backoff.base <- function(x) {
 
 #' Success will clear Proc::BackOff delay
 #' 
-#' @param
-#' @keywords reset
 #' @export
 #' @examples
 #' success(backoff_obj)
@@ -91,8 +84,6 @@ success.backoff.base <- function(x) {
 #' A reset function
 #' 
 #' Simply just resets backoff object back to a state in which no "backing off" exists.
-#' @param
-#' @keywords reset
 #' @export
 #' @examples
 #' reset(backoff_obj)
@@ -110,8 +101,6 @@ reset.backoff.base <- function(x) {
 #' The calculate_back_off function is called to get the time in seconds to wait. 
 #' The time waited is time+calculated_back_off time, however it is capped by 
 #' max_timeout.
-#' @param
-#' @keywords failing
 #' @export
 #' @examples
 #' failure(backoff_obj)

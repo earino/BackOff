@@ -10,10 +10,10 @@
 #' @param min The minimum sleep time in seconds
 #' @param max The maximum sleep time in seconds
 #' @param max_timeout The maximum amount of time the system can backoff (in seconds)
-#' @keyword constructor
 #' @export
 #' @examples 
 #' backoff_obj <- Random(min = 5, max = 100)
+
 Random <- function(min=1, max=100, max_timeout=0) {
   retval <- structure(list(min=min,
                            max=max,
@@ -31,7 +31,6 @@ Random <- function(min=1, max=100, max_timeout=0) {
 
 #' Returns the new back off value.
 #'
-#' @keyword back off time
 #' @export
 
 calculate_back_off.backoff.random <- function(x) {
