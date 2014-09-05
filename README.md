@@ -1,6 +1,8 @@
 BackOff is a Package for Backing Off from Resources
 ===================================================
 
+This package is 100% a ripoff (er, inspiration) from the fantastic
+perl module [Proc::BackOff](https://metacpan.org/pod/Proc::BackOff)
 
     library(BackOff)  
     
