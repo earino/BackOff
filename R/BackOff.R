@@ -19,13 +19,19 @@ BackOff <- function(max_timeout=0) {
   retval
 }
 
+#' @export
 delay <- function(x) UseMethod("delay")
+#' @export
 sleep <- function(x) UseMethod("sleep")
+#' @export
 success <- function(x) UseMethod("success")
+#' @export
 reset <- function(x) UseMethod("reset")
+#' @export
 failure <- function(x) UseMethod("failure")
-valid_number_check <- function(x) UseMethod("valid_number_check")
+#' @export
 calculate_back_off <- function(x) UseMethod("calculate_back_off")
+#' @export
 back_off_in_progress <- function(x) UseMethod("back_off_in_progress")
 
 #' Function to retrieve delay
