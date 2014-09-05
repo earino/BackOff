@@ -1,3 +1,19 @@
+#' Constructor for Exponential backoff classes. 
+#' 
+#' Builds an Exponential BackOff object. Usage:
+#'    backoff_obj <- Exponential(exponent = 2 )
+#'    On N'th failure delay would be set to:
+#'      1st failure  :  1^2 = 1
+#'      2nd failure  :  2^2 = 4
+#'      3rd failure  :  3^2 = 9
+#'      4th failure  :  4^2 = 16
+#' @param exponent The exponent of the equiation
+#' @param max_timeout The maximum amount of time the system can backoff (in seconds)
+#' @keyword constructor
+#' @export
+#' @examples 
+#' backoff_obj <- Exponential(exponent = 5)
+
 Exponential <- function(exponent=1, max_timeout=0) {
   retval <- structure(list(exponent=exponent,
                            max_timeout=max_timeout,
@@ -11,6 +27,11 @@ Exponential <- function(exponent=1, max_timeout=0) {
   class(retval) <- c("backoff.exponential", "backoff.base")
   retval
 }
+
+#' Returns the new back off value.
+#'
+#' @keyword back off time
+#' @export
 
 calculate_back_off.backoff.exponential <- function(x) {
   delay <- x$failure_count ^ x$exponent
