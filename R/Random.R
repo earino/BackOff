@@ -14,7 +14,7 @@
 #' @examples 
 #' backoff_obj <- Random(min = 5, max = 100)
 
-Random <- function(min=1, max=100, max_timeout=0) {
+Random <- function(max_timeout=0, min=1, max=100) {
   retval <- structure(list(min=min,
                            max=max,
                            max_timeout=max_timeout,

@@ -13,7 +13,7 @@
 #' @examples 
 #' backoff_obj <- Exponential(exponent = 5)
 
-Exponential <- function(exponent=1, max_timeout=0) {
+Exponential <- function(max_timeout=0, exponent=1) {
   retval <- structure(list(exponent=exponent,
                            max_timeout=max_timeout,
                            failure_count=0,

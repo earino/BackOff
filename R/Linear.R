@@ -15,7 +15,7 @@
 #' @examples 
 #' backoff_obj <- Linear(slope = 5, b=2)
 
-Linear <- function(slope=1, b=0, max_timeout=0) {
+Linear <- function(max_timeout=0, slope=1, b=0) {
   retval <- structure(list(slope=slope, 
                             b=b,
                             max_timeout=max_timeout,
