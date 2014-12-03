@@ -19,7 +19,7 @@ perl module [Proc::BackOff](https://metacpan.org/pod/Proc::BackOff)
         failure(backoff_obj)
       }
 
-      if (failure_count > 100) {
+      if (backoff_obj$failure_count > 100) {
         error("Something is seriously wrong.")
       }
 
